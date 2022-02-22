@@ -1,0 +1,237 @@
+:root {
+    --main-color: #54c454;
+    --secondary-color: #a5aaad;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.vanila_container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 3fr;
+    grid-template-areas: "sidebar nav nav nav" "sidebar main main main";
+}
+
+.vanila_navbar {
+    display: flex;
+    grid-area: nav;
+    background: #fff;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.nav_icon {
+    font-size: 18px;
+    display: none;
+    cursor: pointer;
+}
+
+.navbar_left > a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-left: 16px;
+    font-weight: 600;
+}
+
+.active_link {
+    color: var(--main-color) !important;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--main-color);
+}
+
+.navbar_right > a {
+    text-decoration: none;
+    margin-right: 16px;
+    color: #1a1919;
+    align-items: center;
+}
+
+.navbar_right > a > svg {
+    background: #fff;
+    border-radius: 50px;
+    padding: 7px;
+    box-shadow: 2px 2px 5px #d4d4d4, -2px -2px 5px #fff;
+}
+
+.navbar_right > a > img {
+    width: 30px;
+}
+
+main {
+    grid-area: main;
+    overflow-y: auto;
+    background: #e9e9e9;
+}
+
+.main_container {
+    padding: 20px 35px;
+}
+
+.main_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_greeting > h1 {
+    color: var(--main-color);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.main_greeting > p {
+    font-weight: 16px;
+    color: #909396;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    overflow-y: auto;
+    padding: 20px;
+    background: #0a0909;
+    min-height: 100vh;
+}
+
+.sidebar_title {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar_img {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar_img > h1 {
+    display: inline;
+    font-size: 28px;
+    font-weight: 700;
+    margin-left: 50px;
+    color: #fff;
+}
+
+.sidebar_title > svg {
+    font-size: 18px;
+    margin-left: 20px;
+    display: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sidebar_menu > h2 {
+    color: #268f26;
+    font-weight: 700;
+    font-size: 18px;
+    width: 100px;
+    margin: 10px 10px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #268f26;
+}
+
+.sidebar_link {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.active_menu_link {
+    color: #54c454;
+    padding: 10px;
+    border-radius: 10px;
+    background: #268f2644;
+}
+
+.active_menu_link > a {
+    color: #54c454 !important;
+}
+
+.sidebar_logout {
+    color: #dd2525;
+    margin-bottom: 5px;
+    margin-top: 45px;
+    border-bottom: 2px solid #dd2525;
+    width: 100px;
+    padding-bottom: 14px;
+}
+
+.sidebar_link > a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.sidebar_logout > a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #dd2525;
+    font-weight: 500;
+}
+
+.sidebar_responsive {
+    display: inline !important;
+    z-index: 9999 !important;
+    left: 0 !important;
+    position: absolute;
+}
+
+.card-dashboard {
+    max-height: 100px;
+}
+
+.btn-main {
+    background: #77da77;
+}
+
+@media only screen and (max-width: 978px) {
+    .vanila_container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "nav" "main";
+
+    }
+
+    #sidebar {
+        display: none;
+    }
+    
+    .nav_icon {
+        display: inline;
+    }
+
+    .sidebar_title > svg {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .navbar_left {
+        display: none;
+    }
+}

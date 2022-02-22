@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #ececec;
+}
+
+.btn-main {
+    background: #77da77;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.form-title {
+    color: #2ea72e;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #2ea72e;
+}
