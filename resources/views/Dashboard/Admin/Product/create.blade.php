@@ -11,7 +11,7 @@
             <div class="col-lg-6">
                 @include('partials.alert')
                 <div class="card border-0 rounded shadow-sm p-3">
-                    <form action="/product/create" method="post" enctype="multipart/form-data">
+                    <form action="/admin/product/create" method="post" enctype="multipart/form-data">
                         @csrf
                         <h3 class="text-center fs-3 fw-bold form-title">
                             <i class="fa-solid fa-box fs-4"></i> {{ $title }}

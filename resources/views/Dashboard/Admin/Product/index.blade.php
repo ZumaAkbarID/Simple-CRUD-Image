@@ -16,7 +16,7 @@
                             @include('partials.alert')
                             <ul class="list-unstyled">
                                 <li class="list-item">
-                                    <a href="/product/create" class="btn btn-primary w-20">Create New Product</a>
+                                    <a href="/admin/product/create" class="btn btn-primary w-20">Create New Product</a>
                                 </li>
                             </ul>
                         </div>
@@ -24,11 +24,11 @@
                         <div class="col-4">
                             <ul class="list-unstyled">
                                 <li class="list-item d-flex justify-content-around">
-                                    <form action="/product" method="get">
+                                    <form action="/admin/product" method="get">
                                         <input type="hidden" name="orderBy" value="older">
                                         <button type="submit" class="btn btn-info">Older</button>
                                     </form>
-                                    <form action="/product" method="get">
+                                    <form action="/admin/product" method="get">
                                         <input type="hidden" name="orderBy" value="lasted">
                                         <button type="submit" class="btn btn-success">Lasted</button>
                                     </form>
@@ -38,7 +38,7 @@
                     </div>
 
                     <table class="table table-hover">
-                        <form action="/product" method="get">
+                        <form action="/admin/product" method="get">
                             <div class="input-group">
                                 <input type="text" name="search" class="form-control" placeholder="type something...">
                                 <button type="submit" class="btn btn-main">Search</button>
@@ -70,13 +70,13 @@
                                 <td>{{ $product->name }}</td>
                                 <td>Rp.{{ number_format($product->price,0,',','.') }}</td>
                                 <td>
-                                    <a href="/product/view/{{ $product->id }}" class="badge bg-info">
+                                    <a href="/admin/product/view/{{ $product->id }}" class="badge bg-info">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
-                                    <a href="/product/edit/{{ $product->id }}" class="badge bg-warning">
+                                    <a href="/admin/product/edit/{{ $product->id }}" class="badge bg-warning">
                                         <i class="fa-solid fa-pen-square"></i>
                                     </a>
-                                    <a href="/product/delete/{{ $product->id }}" class="badge bg-danger">
+                                    <a href="/admin/product/delete/{{ $product->id }}" class="badge bg-danger">
                                         <i class="fa-solid fa-trash"></i>
                                     </a>
                                 </td>

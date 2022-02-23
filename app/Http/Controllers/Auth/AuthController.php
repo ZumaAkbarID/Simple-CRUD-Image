@@ -36,7 +36,11 @@ class AuthController extends Controller
 
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            if (auth()->user()->role === 'admin') {
+                return redirect()->intended('/admin');
+            } else if (auth()->user()->role === 'member') {
+                return redirect()->intended('/dashboard');
+            }
         } else {
             return back()->withInput()->with('error', 'Account not found!');
         }
@@ -49,6 +53,7 @@ class AuthController extends Controller
             'username' => 'required|alpha_dash|min:3|unique:users',
             'email' => 'required|email|unique:users',
             'avatar' => 'required|image|file|max:1024',
+            'role' => 'member',
             'password' => 'required|min:8',
             'password_confirmation' => 'required|same:password'
         ]);

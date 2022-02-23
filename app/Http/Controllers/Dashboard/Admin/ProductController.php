@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -35,7 +35,7 @@ class ProductController extends Controller
             'dataProduct' => $product
         ];
 
-        return view('Dashboard.Product.index', $data);
+        return view('Dashboard.Admin.Product.index', $data);
     }
 
     /**
@@ -49,7 +49,7 @@ class ProductController extends Controller
             'title' => 'Create New Product',
         ];
 
-        return view('Dashboard.Product.create', $data);
+        return view('Dashboard.Admin.Product.create', $data);
     }
 
     /**
@@ -73,9 +73,9 @@ class ProductController extends Controller
         $create = Product::create($validated);
 
         if ($create) {
-            return redirect('/product/create')->with('success', 'Product successfully added');
+            return redirect('/admin/product/create')->with('success', 'Product successfully added');
         } else {
-            return redirect('/product/create')->with('error', 'Failed to add product');
+            return redirect('/admin/product/create')->with('error', 'Failed to add product');
         }
     }
 
@@ -94,7 +94,7 @@ class ProductController extends Controller
             'product' => $product
         ];
 
-        return view('Dashboard.Product.single', $data);
+        return view('Dashboard.Admin.Product.single', $data);
     }
 
     /**
@@ -112,7 +112,7 @@ class ProductController extends Controller
             'product' => $product
         ];
 
-        return view('Dashboard.Product.edit', $data);
+        return view('Dashboard.Admin.Product.edit', $data);
     }
 
     /**
@@ -141,9 +141,9 @@ class ProductController extends Controller
         $edit = Product::where('id', $id)->where('user_id', auth()->user()->id)->update($validated);
 
         if ($edit) {
-            return redirect('/product/view/' . $id)->with('success', 'Product successfully edited');
+            return redirect('/admin/product/view/' . $id)->with('success', 'Product successfully edited');
         } else {
-            return redirect('/product/view/' . $id)->with('error', 'Failed to edit product');
+            return redirect('/admin/product/view/' . $id)->with('error', 'Failed to edit product');
         }
     }
 
@@ -163,9 +163,9 @@ class ProductController extends Controller
         }
 
         if ($delete->delete()) {
-            return redirect('/product')->with('success', 'Product successfully deleted');
+            return redirect('/admin/product')->with('success', 'Product successfully deleted');
         } else {
-            return redirect('/product')->with('error', 'Failed to delete product');
+            return redirect('/admin/product')->with('error', 'Failed to delete product');
         }
     }
 }

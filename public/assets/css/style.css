@@ -79,6 +79,7 @@ body {
 
 .navbar_right > a > img {
     width: 30px;
+    border-radius: 200px;
 }
 
 main {
@@ -233,5 +234,13 @@ main {
 @media only screen and (max-width: 480px) {
     .navbar_left {
         display: none;
+    }
+
+    .main_greeting > h1 {
+        font-size: 18px;
+    }
+
+    .main_greeting > p {
+        font-size: 14px;
     }
 }

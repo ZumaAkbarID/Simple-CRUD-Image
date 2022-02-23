@@ -43,10 +43,10 @@
                 <div class="bg-white rounded border-0">
                     <ul class="list-unstyled p-3">
                         <li class="list-item mb-3">
-                            <a href="/product/edit/{{ $product->id }}" class="btn btn-warning w-100">Edit</a>
+                            <a href="/admin/product/edit/{{ $product->id }}" class="btn btn-warning w-100">Edit</a>
                         </li>
                         <li class="list-item">
-                            <a href="/product/delete/{{ $product->id }}" class="btn btn-danger w-100">Delete</a>
+                            <a href="/admin/product/delete/{{ $product->id }}" class="btn btn-danger w-100">Delete</a>
                         </li>
                     </ul>
                 </div>

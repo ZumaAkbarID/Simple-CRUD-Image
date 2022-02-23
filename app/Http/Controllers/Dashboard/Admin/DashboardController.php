@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -17,6 +17,6 @@ class DashboardController extends Controller
             'totalProduct' => Product::get()->count(),
             'totalUser' => User::get()->count()
         ];
-        return view('Dashboard.dashboard', $data);
+        return view('Dashboard.Admin.dashboard', $data);
     }
 }
