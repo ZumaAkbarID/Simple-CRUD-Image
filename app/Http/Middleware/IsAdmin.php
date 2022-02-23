@@ -17,7 +17,7 @@ class IsAdmin
     public function handle(Request $request, Closure $next)
     {
         if (!auth()->guest() && auth()->user()->role !== 'admin') {
-            return abort(403);
+            return redirect('/dashboard')->with('error', 'Access denied!');
         }
 
         return $next($request);

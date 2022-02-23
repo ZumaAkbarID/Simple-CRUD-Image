@@ -17,7 +17,7 @@ class MemberOnly
     public function handle(Request $request, Closure $next)
     {
         if (!auth()->guest() && auth()->user()->role !== 'member') {
-            return redirect('/admin');
+            return redirect('/admin')->with('error', 'Access denied!');
         }
 
         return $next($request);

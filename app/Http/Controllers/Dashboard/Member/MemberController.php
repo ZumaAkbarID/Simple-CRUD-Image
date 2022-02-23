@@ -42,6 +42,10 @@ class MemberController extends Controller
     {
         $product = Product::find($id);
 
+        if (is_null($product)) {
+            return redirect('/product');
+        }
+
         $data = [
             'title' => $product->name,
             'product' => $product

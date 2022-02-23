@@ -18,15 +18,9 @@
 
                         <div class="col-4">
                             <ul class="list-unstyled">
-                                <li class="list-item d-flex justify-content-end">
-                                    <form action="/product" method="get">
-                                        <input type="hidden" name="orderBy" value="older">
-                                        <button type="submit" class="btn btn-info">Older</button>
-                                    </form>
-                                    <form action="/product" method="get">
-                                        <input type="hidden" name="orderBy" value="lasted">
-                                        <button type="submit" class="btn btn-success">Lasted</button>
-                                    </form>
+                                <li class="list-item">
+                                    <a href="/product?orderBy=lasted" class="btn btn-primary mr-2">Lasted</a>
+                                    <a href="/product?orderBy=older" class="btn btn-info">Older</a>
                                 </li>
                             </ul>
                         </div>

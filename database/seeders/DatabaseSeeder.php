@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@email.com',
             'email_verified_at' => null,
             'role' => 'admin',
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password
+            'password' => bcrypt('password')
         ]);
 
         User::create([
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'member@email.com',
             'email_verified_at' => null,
             'role' => 'member',
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi' // password
+            'password' => bcrypt('password')
         ]);
     }
 }
