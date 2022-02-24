@@ -24,8 +24,18 @@ class ProductController extends Controller
             $product = Product::with('user')->where('user_id', auth()->user()->id)->orderBy('created_at', 'DESC')->get();
         } else if (!empty($request->orderBy) && $request->orderBy == 'older') {
             $product = Product::with('user')->where('user_id', auth()->user()->id)->orderBy('created_at', 'ASC')->get();
+        } else if (!empty($request->orderBy) && $request->orderBy == 'ASC') {
+            $product = Product::with('user')->where('user_id', auth()->user()->id)->orderBy('name', 'ASC')->get();
+        } else if (!empty($request->orderBy) && $request->orderBy == 'DESC') {
+            $product = Product::with('user')->where('user_id', auth()->user()->id)->orderBy('name', 'DESC')->get();
         } else if (!empty($request->search)) {
             $product = Product::where('user_id', auth()->user()->id)->where('name', 'like', '%' . $request->search . '%')->orWhere('description', 'like', '%' . $request->search . '%')->get();
+        } else if (!empty($request->rangefrom) && !empty($request->rangeto)) {
+            if ($request->rangeto <= $request->rangefrom) {
+                return redirect('/admin/product')->with('error', 'Min must be higher than max');
+            }
+
+            $product = Product::where('user_id', auth()->user()->id)->where('price', '>=', (int) $request->rangefrom)->where('price', '<=', (int) $request->rangeto)->get();
         } else {
             $product = Product::where('user_id', auth()->user()->id)->get();
         }

@@ -8,34 +8,8 @@
 
         <div class="row">
 
-            <div class="col-lg-12">
+            <div class="col-lg-8 order-2">
                 <div class="bg-white rounded border-0 p-3">
-
-                    <div class="row">
-                        <div class="col-8">
-                            @include('partials.alert')
-                            <ul class="list-unstyled">
-                                <li class="list-item">
-                                    <a href="/admin/product/create" class="btn btn-primary w-20">Create New Product</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="col-4">
-                            <ul class="list-unstyled">
-                                <li class="list-item d-flex justify-content-around">
-                                    <form action="/admin/product" method="get">
-                                        <input type="hidden" name="orderBy" value="older">
-                                        <button type="submit" class="btn btn-info">Older</button>
-                                    </form>
-                                    <form action="/admin/product" method="get">
-                                        <input type="hidden" name="orderBy" value="lasted">
-                                        <button type="submit" class="btn btn-success">Lasted</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
                     <table class="table table-hover">
                         <form action="/admin/product" method="get">
@@ -47,7 +21,7 @@
                         <thead>
                             <tr>
                                 <td>No.</td>
-                                <td>Image</td>
+                                <td class="tb_image">Image</td>
                                 <td>Product Name</td>
                                 <td>Price</td>
                                 <td>Action</td>
@@ -64,7 +38,7 @@
                             @foreach($dataProduct as $product)
                             <tr>
                                 <td>{{ $i++ }}</td>
-                                <td>
+                                <td class="tb_image">
                                     <img src="{{ asset('storage/'. $product->image) }}" width="100px" alt="">
                                 </td>
                                 <td>{{ $product->name }}</td>
@@ -86,6 +60,54 @@
 
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-3">
+                <div class="bg-white rounded border-0 shadow-sm px-3 pt-3">
+                    @include('partials.alert')
+
+                    <div class="row">
+
+                        <div class="col-4">
+                            <ul class="list-unstyled">
+                                <li class="list-item">
+                                    <a href="/admin/product?orderBy=lasted" class="btn btn-primary mb-2 w-100">Lasted</a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="/admin/product?orderBy=older" class="btn btn-info mb-2 w-100">Older</a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="/admin/product?orderBy=ASC" class="btn btn-info mb-2 w-100">A-Z</a>
+                                </li>
+                                <li class="list-item">
+                                    <a href="/admin/product?orderBy=DESC" class="btn btn-info mb-2 w-100">Z-A</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="col-8 order-1 d-flex justify-content-end">
+                            <ul class="list-unstyled">
+                                <li class="list-item">
+                                    <a href="/admin/product/create" class="btn btn-primary w-100 mb-2">Create New Product</a>
+                                </li>
+
+                                <form action="" method="get">
+                                    <p class="fw-bold mt-1">Filter Price</p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input type="number" name="rangefrom" class="form-control mb-2" min="1" placeholder="Min" required>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="number" name="rangeto" class="form-control mb-2" min="1" placeholder="Max">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-info w-100">Filter</button>
+                                </form>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 

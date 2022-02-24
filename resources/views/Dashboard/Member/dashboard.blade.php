@@ -14,6 +14,18 @@
 
         <div class="row">
 
+            <div class="col-lg-4 mb-3">
+                <div class="card card-dashboard border-left-success rounded shadow-sm">
+                    <div class="card-body">
+                        <i class="fa-solid fa-box"></i>
+                        <h4 class="card-title mb-0">
+                            Total Product
+                        </h4>
+                        <span class="text-muted">{{ $totalProduct }}</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-lg-8">
                 <div class="bg-white rounded border-0 p-3">
                     <h3 class="fw-bold">Last 5 product</h3>
@@ -60,18 +72,6 @@
 
                         </tbody>
                     </table>
-                </div>
-            </div>
-
-            <div class="col-lg-4 mb-3">
-                <div class="card card-dashboard border-0 rounded shadow-sm">
-                    <div class="card-body">
-                        <i class="fa-solid fa-box"></i>
-                        <h4 class="card-title mb-0">
-                            Total All Product
-                        </h4>
-                        <span class="text-muted">{{ $totalProduct }}</span>
-                    </div>
                 </div>
             </div>
 

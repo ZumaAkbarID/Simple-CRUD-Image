@@ -211,6 +211,14 @@ main {
     background: #77da77;
 }
 
+.border-left-primary {
+    border-left: 3px solid blue;
+}
+
+.border-left-success {
+    border-left: 3px solid green;
+}
+
 @media only screen and (max-width: 978px) {
     .vanila_container {
         grid-template-columns: 1fr;
@@ -242,5 +250,9 @@ main {
 
     .main_greeting > p {
         font-size: 14px;
+    }
+
+    .tb_image {
+        display: none;
     }
 }

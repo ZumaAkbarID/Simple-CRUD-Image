@@ -14,33 +14,31 @@
 
         <div class="row">
 
-            <div class="col-lg-6 mb-3">
-                <div class="card card-dashboard border-0 rounded shadow-sm">
-                    <div class="card-body">
-                        <i class="fa-solid fa-user"></i>
-                        <h4 class="card-title mb-0">
-                            Total All Users
-                        </h4>
-                        <span class="text-muted">{{ $totalUser }}</span>
+            <div class="col-lg-4">
+                <div class="col-lg-12 mb-3">
+                    <div class="card card-dashboard border-left-primary rounded shadow-sm">
+                        <div class="card-body">
+                            <i class="fa-solid fa-user"></i>
+                            <h4 class="card-title mb-0">
+                                Total Users
+                            </h4>
+                            <span class="text-muted">{{ $totalUser }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 mb-3">
+                    <div class="card card-dashboard border-left-success rounded shadow-sm">
+                        <div class="card-body">
+                            <i class="fa-solid fa-box"></i>
+                            <h4 class="card-title mb-0">
+                                Total Products
+                            </h4>
+                            <span class="text-muted">{{ $totalProduct }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-6 mb-3">
-                <div class="card card-dashboard border-0 rounded shadow-sm">
-                    <div class="card-body">
-                        <i class="fa-solid fa-box"></i>
-                        <h4 class="card-title mb-0">
-                            Total All Product
-                        </h4>
-                        <span class="text-muted">{{ $totalProduct }}</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
 
             <div class="col-lg-8">
                 <div class="bg-white rounded border-0 p-3">
